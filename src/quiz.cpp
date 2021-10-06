@@ -21,7 +21,7 @@ int main() {
   q1.correct_answer = "10";
 
   auto seed = std::chrono::system_clock::now().time_since_epoch().count();
-  std::default_random_engine rng(seed);
+  std::default_random_engine rng(static_cast<unsigned int>(seed));
   std::shuffle(q1.answers.begin(), q1.answers.end(), rng);
 
   char answer_indicator = 'a';
@@ -49,7 +49,7 @@ int main() {
 
   std::size_t answer_index = client_answer[0] - 97;
   assert(answer_index < q1.answers.size());
-  char chosen_answer_indicator = 'a' + answer_index;
+  char chosen_answer_indicator = 'a' + static_cast<char>(answer_index);
   if (q1.answers[answer_index] == q1.correct_answer) {
     std::cout << "Your answer " << chosen_answer_indicator << " is correct\n";
   } else {
