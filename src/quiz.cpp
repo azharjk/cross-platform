@@ -68,7 +68,7 @@ int main() {
     }
   } while (client_answer.empty());
 
-  std::size_t answer_index = client_answer[0] - 97;
+  char answer_index = client_answer[0] - 'a';
   assert(answer_index < copy_answers.size());
   char chosen_answer_indicator = 'a' + static_cast<char>(answer_index);
   if (q1.Verify(copy_answers[answer_index])) {
