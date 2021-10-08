@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cassert>
 
 struct Question {
   std::string text;
@@ -22,8 +23,23 @@ int main() {
   for (auto& answer : q1.answers) {
     std::cout << "(" << answer_indicator++ << ") " << answer << std::endl;
   }
-  std::cout << "Answer: ";
-  std::cin >> client_answer;
+
+  do {
+    std::cout << "Answer: ";
+    std::getline(std::cin, client_answer);
+    if (!client_answer.empty()) {
+      if (client_answer.size() != 1) {
+        std::cout << "Please enter either a, b, or c\n";
+        client_answer.clear();
+      } else if (client_answer[0] == 'a'
+                 || client_answer[0] == 'b'
+                 || client_answer[0] == 'c') {
+        break;
+      }
+    }
+  } while (client_answer.empty());
+
+  assert(client_answer.size() == 1);
 
   std::size_t answer_index = client_answer[0] - 97;
   if (q1.answers[answer_index] == q1.correct_answer) {
