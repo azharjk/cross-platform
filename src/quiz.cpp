@@ -102,7 +102,7 @@ int main() {
     std::cout << "-----------------------------------\n";
   }
 
-  std::cout << "Total Score: " << GetReadableScore(total_score, 3) << std::endl;
+  std::cout << "Total Score: " << GetReadableScore(total_score, questions.size()) << std::endl;
 
   return 0;
 }
