@@ -6,12 +6,6 @@
 #include <random>
 #include <chrono>
 
-// struct Question {
-//   std::string text;
-//   std::vector<std::string> answers;
-//   std::string correct_answer;
-// };
-
 class Question {
   public:
     Question(const std::string& text,
@@ -43,13 +37,6 @@ class Question {
 };
 
 int main() {
-  // Question q1;
-  // q1.text = "How old are you?";
-  // q1.answers.push_back("10");
-  // q1.answers.push_back("11");
-  // q1.answers.push_back("12");
-  // q1.correct_answer = "10";
-
   Question q1("How old are you", std::vector<std::string>{"10", "11", "12"}, "10");
   auto copy_answers = q1.answers();
 
