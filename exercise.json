@@ -1,0 +1,23 @@
+[
+  {
+    "text": "How old are you?",
+    "answers": [
+      "10", "11", "12"
+    ],
+    "correct_answer": "10"
+  },
+  {
+    "text": "What is your name?",
+    "answers": [
+      "Sam", "Brad", "Say"
+    ],
+    "correct_answer": "Sam"
+  },
+  {
+    "text": "What do you do for a living?",
+    "answers": [
+      "Gambling", "Blinking", "Saying"
+    ],
+    "correct_answer": "Blinking"
+  }
+]

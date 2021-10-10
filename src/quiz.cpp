@@ -6,35 +6,7 @@
 #include <random>
 #include <chrono>
 
-class Question {
-  public:
-    Question(const std::string& text,
-             const std::vector<std::string>& answers_,
-             const std::string& correct_answer) :
-             text_(text), answers_(answers_),
-             correct_answer_(correct_answer) {}
-
-  bool Verify(const std::string& answer) const {
-    return answer == correct_answer_;
-  }
-
-  std::string text() const {
-    return text_;
-  }
-
-  std::vector<std::string> answers() const {
-    return answers_;
-  }
-
-  std::string correct_answer() const {
-    return correct_answer_;
-  }
-
-  private:
-    std::string text_;
-    std::vector<std::string> answers_;
-    std::string correct_answer_;
-};
+#include "question.hpp"
 
 int GetReadableScore(int score, std::size_t size) {
   return (static_cast<double>(score) / static_cast<double>(size)) * 100;
