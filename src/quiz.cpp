@@ -9,7 +9,7 @@
 #include "question.hpp"
 
 int GetReadableScore(int score, std::size_t size) {
-  return (static_cast<double>(score) / static_cast<double>(size)) * 100;
+  return static_cast<int>((static_cast<double>(score) / static_cast<double>(size)) * 100);
 }
 
 int main() {
